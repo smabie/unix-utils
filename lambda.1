@@ -1,0 +1,69 @@
+.\" lambda.1
+.\"
+.\" This file is public domain as declared by Sturm Mabie.
+.\"
+.Dd $Mdocdate: December 6 2011$
+.Dt LAMBDA 1
+.Os
+.Sh NAME
+.Nm lambda
+.Nd create a shell script and print its path
+.Sh SYNOPSIS
+.Nm lambda
+.Op Fl i Ar interpreter
+.Ar expression ...
+.Sh DESCRIPTION
+The
+.Nm
+utility creates and then prints the path to a shell script containing the
+expressions passed to it. Each
+.Ar expression
+corresponds to a line of the shell script. The purpose of this is to crudely
+simulate lambda expressions or anonymous functions that are present in many
+programming languages.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl i Ar interpreter
+The path to the command interpreter to be used. Defaults to
+.Dq /bin/sh .
+.El
+.Sh FILES
+.Bl -tag -width /tmp/lambda-cache -compact
+.It Pa /bin/sh
+default command interpreter
+.It Pa /tmp/lambda-cache
+location of the files created by
+.Nm
+.El
+.Sh EXIT STATUS
+.Ex -std lambda
+.Sh EXAMPLES
+To create an anonymous function that prints out its second argument on the first
+line and its first argument on the second line:
+.Pp
+.Dl $ lambda 'echo $2' 'echo $1'
+.Pp
+Calling
+.Nm
+just by itself is not very useful. To create the same function and apply it to
+two arguments
+.Dq foo
+and
+.Dq bar :
+.Pp
+.Dl $ `lambda 'echo $2' 'echo $1'` foo bar
+.Pp
+A more practical example, and probably the most common use case of
+.Nm
+is in conjunction with
+.Xr xargs 1 .
+To print the name and length of the name of every file in the current directory:
+.Pp
+.Dl $ ls | xargs -n 1 `lambda 'echo $1 $(($(echo $1 | wc -c)-1))'`
+.Sh SEE ALSO
+.Xr apply 1 ,
+.Xr xargs 1
+.Sh AUTHORS
+This program was created by Sturm Mabie
+.Mt ( sturm@cryptm.org ) .

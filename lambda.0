@@ -1,0 +1,52 @@
+LAMBDA(1)                  OpenBSD Reference Manual                  LAMBDA(1)
+
+NNAAMMEE
+     llaammbbddaa - create a shell script and print its path
+
+SSYYNNOOPPSSIISS
+     llaammbbddaa [--ii _i_n_t_e_r_p_r_e_t_e_r] _e_x_p_r_e_s_s_i_o_n _._._.
+
+DDEESSCCRRIIPPTTIIOONN
+     The llaammbbddaa utility creates and then prints the path to a shell script
+     containing the expressions passed to it. Each _e_x_p_r_e_s_s_i_o_n corresponds to a
+     line of the shell script. The purpose of this is to crudely simulate
+     lambda expressions or anonymous functions that are present in many
+     programming languages.
+
+     The options are as follows:
+
+     --ii _i_n_t_e_r_p_r_e_t_e_r
+             The path to the command interpreter to be used. Defaults to
+             ``/bin/sh''.
+
+FFIILLEESS
+     _/_b_i_n_/_s_h            default command interpreter
+     _/_t_m_p_/_l_a_m_b_d_a_-_c_a_c_h_e  location of the files created by llaammbbddaa
+
+EEXXIITT SSTTAATTUUSS
+     The llaammbbddaa utility exits 0 on success, and >0 if an error occurs.
+
+EEXXAAMMPPLLEESS
+     To create an anonymous function that prints out its second argument on
+     the first line and its first argument on the second line:
+
+           $ lambda 'echo $2' 'echo $1'
+
+     Calling llaammbbddaa just by itself is not very useful. To create the same
+     function and apply it to two arguments ``foo'' and ``bar'':
+
+           $ `lambda 'echo $2' 'echo $1'` foo bar
+
+     A more practical example, and probably the most common use case of llaammbbddaa
+     is in conjunction with xargs(1).  To print the name and length of the
+     name of every file in the current directory:
+
+           $ ls | xargs -n 1 `lambda 'echo $1 $(($(echo $1 | wc -c)-1))'`
+
+SSEEEE AALLSSOO
+     apply(1), xargs(1)
+
+AAUUTTHHOORRSS
+     This program was created by Sturm Mabie (_s_t_u_r_m_@_c_r_y_p_t_m_._o_r_g).
+
+OpenBSD 5.0                    December 6, 2011                    OpenBSD 5.0

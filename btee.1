@@ -1,0 +1,37 @@
+.\" btee.1
+.\"
+.\" This file is public domain as declared by Sturm Mabie.
+.\"
+.Dd $Mdocdate: December 8 2011$
+.Dt BTEE 1
+.Os
+.Sh NAME
+.Nm btee
+.Nd buffered pipe fitting
+.Sh SYNOPSIS
+.Nm btee
+.Op Fl ai
+.Op Ar
+.Sh DESCRIPTION
+The
+.Nm
+utility copies standard input to standard output, making a copy in zero or more
+files. The output is buffered. Except for the output being buffered,
+.Nm
+is in every way identical to
+.Xr tee 1 .
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl a
+Append the output to the files rather than overwriting them.
+.It Fl i
+Ignore the
+.Dv SIGINT
+signal.
+.El
+.Sh EXIT STATUS
+.Ex -std btee
+.Sh AUTHORS
+This program was created by Sturm Mabie
+.Mt ( sturm@cryptm.org ) .

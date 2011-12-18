@@ -1,0 +1,35 @@
+.\" pick.1
+.\" 
+.\" This file is public domain as declared by Sturm Mabie.
+.\" 
+.Dd $Mdocdate: December 7 2011$
+.Dt PICK 1
+.Os
+.Sh NAME
+.Nm pick
+.Nd interactively select lines from files
+.Sh SYNOPSIS
+.Nm pick
+.Op Ar 
+.Sh DESCRIPTION
+The
+.Nm
+utility reads in lines from each
+.Ar file ,
+and prints each line out one by one to standard error, querying the user after
+each line is displayed. If no files are specified,
+.Nm
+reads from standard input. If the user enters any string starting with the
+letter
+.Sq y ,
+the line is then copied to standard output, if any string starting with the
+letter
+.Sq q
+is entered, the rest of the file is skipped. Otherwise,
+.Nm
+moves on to the next line.
+.Sh EXIT STATUS
+.Ex -std pick
+.Sh AUTHORS
+This program was created by Sturm Mabie
+.Mt ( sturm@cryptm.org ) .

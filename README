@@ -1,0 +1,13 @@
+unix-utils is a collection of useful unix utilities not included by
+default in unix-like operating systems.
+
+The utilites included are:
+	btee - buffered pipe fitting
+	lambda - create a shell script and print its path
+	pick - interactively select lines from files
+	slice - display portions of files
+
+check out INSTALL for installation instructions. Check out the man
+pages of each utility for usage info.
+
+unix-utils was written by Sturm Mabie (sturm@cryptm.org)

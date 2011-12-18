@@ -1,0 +1,66 @@
+.\" slice.1
+.\"
+.\" This file is public domain as declared by Sturm Mabie.
+.\"
+.Dd $Mdocdate: December 6 2011$
+.Dt SLICE 1
+.Os
+.Sh NAME
+.Nm slice
+.Nd display portions of files
+.Sh SYNOPSIS
+.Nm slice
+.Op Fl b | Fl l | Fl w
+.Ar range
+.Op Ar
+.Sh DESCRIPTION
+The
+.Nm
+utility displays a portion of each
+.Ar file ,
+as specified by
+.Ar range .
+If no files are provided,
+.Nm
+reads from standard input. If more than one file is specified,
+.Nm
+precedes the output of each file with the following, in order to delimit the
+displayed sections of each file:
+.Pp
+.Dl ==> Ar file No <==
+.Pp
+The specific identifying syntax was chosen to reflect that of
+.Xr head 1
+and
+.Xr tail 1 .
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl b
+Specifies that
+.Ar range
+should operate on the bytes of each file.
+.It Fl l
+Indicates that
+.Ar range
+refers to lines of each file. This is the default.
+.It Fl w
+Binds
+.Ar range
+to operate on words of each file.
+.It Ar range
+Indicates what portion of each file to be displayed.
+.Ar range
+must be either two positive integers separated by nothing but a dash
+.Sq -
+or a single positive integer.
+.El
+.Sh EXIT STATUS
+.Ex -std slice
+.Sh SEE ALSO
+.Xr cat 1 ,
+.Xr head 1 ,
+.Xr tail 1
+.Sh AUTHORS
+This program was created by Sturm Mabie
+.Mt ( sturm@cryptm.org ) .
