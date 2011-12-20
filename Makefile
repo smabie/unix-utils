@@ -5,7 +5,6 @@
 # 
 
 CC=gcc
-PROG=morg
 CFLAGS+=-Wall -ansi -pedantic -D_BSD_SOURCE
 
 all:
