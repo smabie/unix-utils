@@ -5,7 +5,7 @@
 # 
 
 CC=gcc
-CFLAGS+=-Wall -ansi -pedantic -D_BSD_SOURCE
+CFLAGS+=-Wall -ansi -pedantic
 
 all:
 	$(CC) $(CFLAGS) btee.c -o btee
