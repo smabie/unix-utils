@@ -8,7 +8,8 @@ CC=gcc
 CFLAGS+=-Wall -ansi -pedantic
 
 all:
-	$(CC) $(CFLAGS) btee.c -o btee
-	$(CC) $(CFLAGS) lambda.c -o lambda
-	$(CC) $(CFLAGS) pick.c -o pick
-	$(CC) $(CFLAGS) slice.c -o slice
+	mkdir bin
+	$(CC) $(CFLAGS) btee.c -o bin/btee
+	$(CC) $(CFLAGS) lambda.c -o bin/lambda
+	$(CC) $(CFLAGS) pick.c -o bin/pick
+	$(CC) $(CFLAGS) slice.c -o bin/slice
