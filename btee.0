@@ -1,26 +1,26 @@
-BTEE(1)			   OpenBSD Reference Manual		       BTEE(1)
+BTEE(1)                    OpenBSD Reference Manual                    BTEE(1)
 
-NAME
-     btee - buffered pipe fitting
+NNAAMMEE
+     bbtteeee - buffered pipe fitting
 
-SYNOPSIS
-     btee [-ai] [file ...]
+SSYYNNOOPPSSIISS
+     bbtteeee [--aaii] [_f_i_l_e _._._.]
 
-DESCRIPTION
-     The btee utility copies standard input to standard output, making a copy
+DDEESSCCRRIIPPTTIIOONN
+     The bbtteeee utility copies standard input to standard output, making a copy
      in zero or more files. The output is buffered. Except for the output
-     being buffered, btee is in every way identical to tee(1).
+     being buffered, bbtteeee is in every way identical to tee(1).
 
      The options are as follows:
 
-     -a	     Append the output to the files rather than overwriting them.
+     --aa      Append the output to the files rather than overwriting them.
 
-     -i	     Ignore the SIGINT signal.
+     --ii      Ignore the SIGINT signal.
 
-EXIT STATUS
-     The btee utility exits 0 on success, and >0 if an error occurs.
+EEXXIITT SSTTAATTUUSS
+     The bbtteeee utility exits 0 on success, and >0 if an error occurs.
 
-AUTHORS
-     This program was created by Sturm Mabie (sturm@cryptm.org).
+AAUUTTHHOORRSS
+     This program was created by Sturm Mabie (_s_t_u_r_m_@_c_r_y_p_t_m_._o_r_g).
 
-OpenBSD 5.3		       December 8, 2011			   OpenBSD 5.3
+OpenBSD 5.3                    December 8, 2011                    OpenBSD 5.3
