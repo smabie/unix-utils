@@ -14,6 +14,10 @@
 #include <string.h>
 #include <limits.h>
 
+#ifdef __GLIBC__
+#include <bsd/bsd.h>
+#endif /* __GLIBC__ */
+
 void usage();
 void slice(FILE *, long, long);
 
