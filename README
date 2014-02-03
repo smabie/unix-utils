@@ -7,6 +7,9 @@ The utilites included are:
 	pick - interactively select lines from files
 	slice - display portions of files
 
+Dependencies:
+	libbsd (under Linux)
+
 check out INSTALL for installation instructions. Check out the man
 pages of each utility for usage info.
 
