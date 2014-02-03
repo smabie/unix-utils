@@ -1,10 +1,5 @@
 Compile and install with:
 
 $ make
-$ cp btee lambda pick slice /path/to/bin
+$ cp bin/* /path/to/bin
 $ cp *.1 /path/to/man
-
-If you're using a braindead man formatter like groff, the man pages
-might be fucked up. The preformatted *.0 man pages are included for
-this reason.
-
