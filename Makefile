@@ -15,3 +15,6 @@ all:
 	$(CC) $(CFLAGS) lambda.c -o bin/lambda
 	$(CC) $(CFLAGS) pick.c -o bin/pick
 	$(CC) $(CFLAGS) slice.c -o bin/slice
+clean:
+	rm -rf bin
+
